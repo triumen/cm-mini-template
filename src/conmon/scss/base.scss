@@ -1,0 +1,55 @@
+/* font-size */
+$text-title-size: 18px;
+$text-normal-size: 14px;
+$text-small-size: 12px;
+
+/* color */
+$text-normal-color: #333;
+$text-sup-color: #999;
+
+$theme-color: #6BC2AE;
+$sup-color: #FF7E00;
+$red-color: #FA2933;
+
+
+/* mixin */
+/* 文字超出一行隐藏 */
+@mixin text-inline {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+/* 文字多行隐藏 */
+@mixin  text-inlines($num) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $num;
+    overflow: hidden;
+}
+
+/* 阴影 */
+@mixin shadow {
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,.1);
+}
+@mixin shadow-top {
+    box-shadow: 0px -4px 8px 1px rgba(0,0,0,.1);
+}
+@mixin shadow-left-top {
+    box-shadow: -2px -2px 6px 2px rgba(0,0,0,.1);
+}
+@mixin shadow-left-down {
+    box-shadow: -2px 2px 6px 2px rgba(0,0,0,.1);
+}
+@mixin shadow-right-top {
+    box-shadow: 2px -2px 6px 2px rgba(0,0,0,.1);
+}
+@mixin shadow-right-down {
+    box-shadow: 2px 2px 6px 2px rgba(0,0,0,.1);
+}
+
+/* 样式重置 */
+text, view {
+    font-size: $text-normal-size;
+    color: $text-normal-color;
+}
