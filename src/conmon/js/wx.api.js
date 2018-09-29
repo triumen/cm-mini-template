@@ -11,6 +11,20 @@ class WxApi {
             })
         })
     }
+    turnPromise(func, params={}) {
+        return new Promise((resolve, reject) => {
+            let op = Object.assign({
+                success: (res)=>{
+                    resolve(res);
+                },
+                fail: (res)=> {
+                    reject(res)
+                }
+            }, params);
+            console.log(op)
+            func(op)
+        })
+    }
     login() {
         return new Promise((resolve, reject) => {
             wx.login({

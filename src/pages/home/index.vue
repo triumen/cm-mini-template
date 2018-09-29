@@ -7,8 +7,8 @@
 <script>
 export default {
     async mounted() {
-        await this.$wx.login()
-        let data =  await this.$wx.getUserInfo()
+        await this.$util.turnPromise(wx.login)
+        let data = await this.$util.turnPromise(wx.getUserInfo, {withCredentials: true});
         this.$store.dispatch('userInfo/setUserInfo', data.userInfo)
         console.log(data)
     },

@@ -11,6 +11,25 @@ class Util {
             div: this[div]
         }
     }
+    /**
+     * 微信 api 转 Promise
+     * @param {微信api名称} func 
+     * @param {api参数} params 
+     */
+    turnPromise(func, params={}) {
+        return new Promise((resolve, reject) => {
+            let op = Object.assign({
+                success: (res)=>{
+                    resolve(res);
+                },
+                fail: (res)=> {
+                    reject(res)
+                }
+            }, params);
+            console.log(op)
+            func(op)
+        })
+    }
     /** 分页函数,
         oldlist => 原数组
         data => 请求的数据

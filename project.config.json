@@ -7,10 +7,10 @@
 		"minified": true,
 		"newFeature": true
 	},
-	"miniprogramRoot": "./dist/",
+	"miniprogramRoot": "dist/",
 	"compileType": "miniprogram",
 	"appid": "touristappid",
-	"projectname": "y",
+	"projectname": "cm-mini-template",
 	"condition": {
 		"search": {
 			"current": -1,
