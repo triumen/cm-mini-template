@@ -98,6 +98,20 @@ class Util {
         r2 = Number(arg2.toString().replace(".", ""));
         return (r1 / r2) * Math.pow(10, t2 - t1);
     }
+    catchClick() {
+        let flag = true;
+        return async function (func) {
+            if(flag) {
+                flag = false;
+                try {
+                    await func()
+                    flag = true;
+                } catch (error) {
+                    flag = true;
+                }
+            }
+        }
+    }
 }
 
 export default new Util();
